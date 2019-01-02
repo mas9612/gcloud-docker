@@ -9,6 +9,9 @@ RUN export CLOUD_SDK_REPO="cloud-sdk-jessie" && \
     apt-get update -y && apt-get -y install google-cloud-sdk openssh-client && \
     rm -rf /var/lib/apt/lists/*
 
+RUN mkdir -p /gcloud
+WORKDIR /gcloud
+
 VOLUME /root/.config
 VOLUME /root/.ssh
 
